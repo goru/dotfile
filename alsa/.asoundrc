@@ -1,0 +1,7 @@
+# http://kawamuray.hatenablog.com/entry/20120902/1346553037
+pcm.!default {
+    type pulse
+}
+ctl.!default {
+    type pulse
+}
