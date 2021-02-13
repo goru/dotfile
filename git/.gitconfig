@@ -1,0 +1,6 @@
+[core]
+	pager = less -Fi
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
