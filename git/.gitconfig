@@ -1,5 +1,5 @@
 [core]
-	pager = less -Fi
+	pager = less -FiX
 [diff]
 	tool = vimdiff
 [difftool]
