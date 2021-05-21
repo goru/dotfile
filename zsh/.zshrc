@@ -11,6 +11,8 @@ fi
 # completion
 autoload -U compinit
 compinit -u
+# ignore case
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # prompt
 if [ "${OS_NAME}" = "Linux" ]; then
