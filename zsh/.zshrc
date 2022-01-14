@@ -50,6 +50,11 @@ if type anyenv >/dev/null; then
   eval "$(anyenv init -)"
 fi
 
+# PATH
+if [ -d ~/local/android-sdk-linux/platform-tools ]; then
+  PATH=~/local/android-sdk-linux/platform-tools:$PATH
+fi
+
 # tmux
 if type tmux >/dev/null && [ -z "${TMUX}" ]; then
   if [ -z "$(tmux ls 2>/dev/null | grep -v attached)" ]; then
