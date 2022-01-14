@@ -57,3 +57,5 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 " *.rest is rst
 autocmd BufNewFile,BufRead *.rest set filetype=rst
+" *.go
+autocmd BufNewFile,BufRead *.go set noexpandtab
