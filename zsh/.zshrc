@@ -51,8 +51,14 @@ if type anyenv >/dev/null; then
 fi
 
 # PATH
-if [ -d ~/local/android-sdk-linux/platform-tools ]; then
-  PATH=~/local/android-sdk-linux/platform-tools:$PATH
+if [ -d ~/local/Android/Sdk/emulator ]; then
+  PATH=~/local/Android/Sdk/emulator:$PATH
+fi
+if [ -d ~/local/Android/Sdk/platform-tools ]; then
+  PATH=~/local/Android/Sdk/platform-tools:$PATH
+fi
+if [ -d ~/local/Android/Sdk/tools/bin ]; then
+  PATH=~/local/Android/Sdk/tools/bin:$PATH
 fi
 
 # tmux
