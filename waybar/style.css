@@ -1,12 +1,15 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    /*font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;*/
+    font-family: monospace, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    /*font-size: 13px;*/
+    font-size: 12pt;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    /*background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+    background-color: rgba(43, 48, 59, 1);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -56,6 +59,10 @@ button:hover {
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+    box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.focused {
