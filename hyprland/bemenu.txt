@@ -1,0 +1,25 @@
+foot               ,foot
+-------------------
+firefox            ,firefox-bin
+firefox (private)  ,firefox-bin -private-window
+chrome             ,google-chrome-stable --disk-cache-dir=/var/tmp/google-chrome -enable-features=UseOzonePlatform -ozone-platform=wayland --enable-wayland-ime
+chrome (private)   ,google-chrome-stable --disk-cache-dir=/var/tmp/google-chrome -enable-features=UseOzonePlatform -ozone-platform=wayland --enable-wayland-ime --incognito
+-------------------
+spacefm            ,spacefm
+freecad            ,~/local/FreeCAD/freecad
+kicad              ,kicad
+inkscape           ,~/local/Inkscape/inkscape
+arduino            ,~/local/arduino/latest/arduino-ide
+android studio     ,~/local/android-studio/latest/bin/studio.sh
+gimp               ,gimp
+-------------------
+scrcpy             ,scrcpy --max-size 1280 --video-bit-rate 2M --turn-screen-off --stay-awake
+-------------------
+screenshot         ,sh -c 'sleep 1; grim - | wl-copy'
+screenshot (window),sh -c 'sleep 1; grim -g "$(hyprctl clients -j | jq -j ".[] | select(.focusHistoryID==0) | \"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])\"")" - | wl-copy'
+-------------------
+blueman-manager    ,blueman-manager
+pavucontrol        ,pavucontrol
+-------------------
+reboot             ,sudo reboot
+poweroff           ,sudo poweroff
