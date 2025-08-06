@@ -61,6 +61,11 @@ if [ -d ~/local/Android/Sdk/cmdline-tools/latest/bin ]; then
   PATH=~/local/Android/Sdk/cmdline-tools/latest/bin:$PATH
 fi
 
+# hyprland
+if [ -d /run/user/`id -u`/hypr ]; then
+  HYPRLAND_INSTANCE_SIGNATURE="$(ls -1t /run/user/`id -u`/hypr | head -1)"
+fi
+
 # tmux
 if type tmux >/dev/null && [ -z "${TMUX}" ]; then
   if [ -z "$(tmux ls 2>/dev/null | grep -v attached)" ]; then
