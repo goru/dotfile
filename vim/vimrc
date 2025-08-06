@@ -1,7 +1,12 @@
 " color
-set background=dark
-colorscheme hybrid
-syntax on
+" https://draculatheme.com/vim
+" https://github.com/dracula/vim/issues/81
+let g:dracula_italic = 0
+if v:version < 802
+  packadd! dracula
+endif
+syntax enable
+colorscheme dracula
 
 " unset
 set nobackup
