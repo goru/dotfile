@@ -57,8 +57,8 @@ fi
 if [ -d ~/local/Android/Sdk/platform-tools ]; then
   PATH=~/local/Android/Sdk/platform-tools:$PATH
 fi
-if [ -d ~/local/Android/Sdk/tools/bin ]; then
-  PATH=~/local/Android/Sdk/tools/bin:$PATH
+if [ -d ~/local/Android/Sdk/cmdline-tools/latest/bin ]; then
+  PATH=~/local/Android/Sdk/cmdline-tools/latest/bin:$PATH
 fi
 
 # tmux
