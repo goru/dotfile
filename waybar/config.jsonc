@@ -233,7 +233,8 @@
     "bluetooth": {
         "format-on": "  ",
         "format-off": "  ",
+        "format-connected": "  ",
         "format-connected-battery": "  {device_alias} ({device_battery_percentage}%) ",
-        "on-click": "rfkill list bluetooth | grep yes && rfkill unblock bluetooth; p=on; bluetoothctl show | grep \"Powered: yes\" && p=off; bluetoothctl power $p"
+        "on-click": "p=on; rfkill list bluetooth | grep \"Soft blocked: no\" && p=off; rfkill toggle bluetooth; bluetoothctl power $p"
     }
 }
