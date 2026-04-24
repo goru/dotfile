@@ -12,4 +12,5 @@ export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
 
 #exec dbus-run-session /usr/bin/Hyprland >$HOME/.config/hypr/hyprland.log 2>&1
-exec dbus-run-session /usr/bin/Hyprland >/dev/null 2>&1
+#exec dbus-run-session /usr/bin/Hyprland >/dev/null 2>&1
+exec dbus-run-session /usr/bin/start-hyprland >/dev/null 2>&1
