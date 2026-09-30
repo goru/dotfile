@@ -7,7 +7,39 @@
     visibility: collapse !important;
 }
 
-/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-the-tree-style-tab-header-at-the-top-of-the-sidebar */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-  display: none;
+/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#for-revamped-sidebar-3762 */
+#webextpanels-window #sidebar-panel-header {
+  /**
+ *    * Height = 21px + 4 * var(--space-large)
+ *       * Reserve a small strip to show the header on hover
+ *          */
+  --sidebar-content-separator-color: color-mix(in srgb, currentColor 10%, transparent);
+  --sidebar-header-hide-margin: calc((21px + 4 * var(--space-large) - var(--space-xsmall)) * -1);
+  transition: all 0.3s;
+  z-index: 1;
+
+  /**
+ *    * Avoid the initial transition caused by shadow DOM style propagation delay:
+ *       * - The padding of #sidebar-panel-header is 0 upon sidebar panel creation.
+ *          * - It then becomes var(--space-large) when the `:host` style from shadow DOM
+ *             *   is applied to #sidebar-panel-header.
+ *                * - This will be treated as a transition and be animated, which is not desired.
+ *                   */
+  padding-block: var(--space-large);
+
+  /**
+ *    * Actually, each element has a default invisible outline. It becomes visible
+ *       * in transition though. So it's necessary to explicitly set width to zero.
+ *          */
+  outline: 0px none;
+
+  margin-block-start: var(--sidebar-header-hide-margin) !important;
+  margin-block-end: 0;
+
+  &:hover {
+    background-color: -moz-dialog;
+    outline: 0.01px solid var(--sidebar-content-separator-color);
+    margin-block-start: calc(var(--space-large) * -1) !important;
+    margin-block-end: calc(var(--sidebar-header-hide-margin) + var(--space-large));
+  }
 }
