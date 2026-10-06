@@ -62,9 +62,11 @@ if [ -d ~/local/Android/Sdk/cmdline-tools/latest/bin ]; then
   PATH=~/local/Android/Sdk/cmdline-tools/latest/bin:$PATH
 fi
 
-# hyprland
-if [ -d /run/user/`id -u`/hypr ]; then
-  HYPRLAND_INSTANCE_SIGNATURE="$(ls -1t /run/user/`id -u`/hypr | head -1)"
+# niri
+if pgrep -u "$(id -u)" -x niri >/dev/null; then
+  export $(grep -z '^DBUS_SESSION_BUS_ADDRESS=' "/proc/$(pgrep -o -u "$USER" -x niri)/environ" | tr -d '\0')
+  export NIRI_SOCKET="$(ls -1t /run/user/$(id -u)/niri.*.sock | head -1)"
+  export WAYLAND_DISPLAY="$(basename "$NIRI_SOCKET" | cut -d. -f2)"
 fi
 
 # tmux

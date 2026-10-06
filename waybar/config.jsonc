@@ -33,7 +33,7 @@
     //    "tray",
     //    "custom/power"
     //],
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["niri/workspaces"],
     "modules-center": [],
     "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "bluetooth", "idle_inhibitor", "tray", "clock"],
     // Modules configuration
@@ -53,8 +53,8 @@
     //         "default": ""
     //     }
     // },
-    "hyprland/workspaces": {
-        "show-special": true
+    "niri/workspaces": {
+        "format": "{index}"
     },
     "keyboard-state": {
         "numlock": true,
