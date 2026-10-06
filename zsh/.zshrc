@@ -46,7 +46,8 @@ if [ "${OS_NAME}" = "Darwin" ]; then
 fi
 
 # anyenv
-if type anyenv >/dev/null; then
+if type ~/.anyenv/bin/anyenv >/dev/null; then
+  PATH=~/.anyenv/bin:$PATH
   eval "$(anyenv init -)"
 fi
 
